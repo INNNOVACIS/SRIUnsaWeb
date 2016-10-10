@@ -1,0 +1,81 @@
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.tree').treegrid();
+        $('.tree-2').treegrid({
+            expanderExpandedClass: 'glyphicon glyphicon-minus',
+            expanderCollapsedClass: 'glyphicon glyphicon-plus'
+        });
+    });
+</script> 
+<div class="container">
+    <div class="row">
+        <div class="panel panel-danger" >
+            <div class="panel-body">
+
+                <h2>Actividades por Investigación</h2>
+                <table class="table tree-2 table-bordered table-striped table-condensed">
+                    <tr class="treegrid-0">
+                        <td>Lista de Investigaciones</td><td>Duración Total</td><td>Observaciones</td><td>Acción</td>
+                    </tr>
+                    <tr class="treegrid-1">
+                        <td>1 Tratamiento sostenible y a bajo costo de agua con arsénico</td><td>80 horas</td><td>Nuevo Proyecto</td>
+                        <td>
+                            <button ng-click="editarTree()" class="btn-sm btn-info">Editar</button>
+                            <button data-toggle="modal" data-target="#myModal" type="submit" class="btn-sm btn-danger ">Eliminar</button>
+                        </td>
+                    </tr>
+                    <tr class="treegrid-2 treegrid-parent-1">
+                        <td>1-1 Actividad</td><td>20 horas</td><td></td><td></td>
+                    </tr>
+                    <tr class="treegrid-3 treegrid-parent-1">
+                        <td>1-2 Actividad</td><td>30</td><td></td><td></td>
+                    </tr>
+                    <tr class="treegrid-4 treegrid-parent-3">
+                        <td>1-2-1 Sub Actividades</td><td>10</td><td></td><td></td>
+                    </tr>
+                    <tr class="treegrid-4 treegrid-parent-3">
+                        <td>1-2-2 Sub Actividades</td><td>10</td><td></td><td></td>
+                    </tr>
+                    <tr class="treegrid-4 treegrid-parent-3">
+                        <td>1-2-3 Sub Actividades </td><td>10</td><td></td><td></td>
+                    </tr>
+                    <tr class="treegrid-5">
+                        <td>2 Reanimador de Uso Fácil</td><td>50 horas</td><td></td>
+                        <td>
+                            <button ng-click="editarTree()" type="submit" class="btn-sm btn-info">Editar</button>
+                            <button data-toggle="modal" data-target="#myModal" type="submit" class="btn-sm btn-danger">Eliminar</button>
+                        </td>
+                    </tr>
+                    <tr class="treegrid-6 treegrid-parent-5">
+                        <td>2-1 Actividad</td><td>20 horas</td><td></td><td></td>
+                    </tr>
+                    <tr class="treegrid-7 treegrid-parent-5">
+                        <td>2-2 Actividad</td><td>20 horas</td><td></td><td></td>
+                    </tr>
+                    <tr class="treegrid-8 treegrid-parent-7">
+                        <td>2-2-1 Actividad</td><td>10 horas</td><td></td><td></td>
+                    </tr>        
+                </table>    
+
+            </div>
+        </div>
+    </div>
+</div> <!-- /container -->
+
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Advertencia!!!</h4>
+            </div>
+            <div class="modal-body">
+                <p>Esta seguro de eliminar?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-sm btn-primary" data-dismiss="modal">Aceptar</button>
+                <button type="button" class="btn-sm btn-danger" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>

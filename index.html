@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="investigacionApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Registro de Investigaciones</title>
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/fileinput.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="css/jquery.treegrid.css">
+
+    
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.treegrid.js"></script>
+    <script type="text/javascript" src="js/jquery.treegrid.bootstrap3.js"></script>
+    <script type="text/javascript" src="js/fileinput.js"></script>
+    <script type="text/javascript" src="css/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/AngularJS/angular.min.js"></script>
+    <script type="text/javascript" src="js/AngularJS/angular-route.js"></script>
+    <script type="text/javascript" src="js/AngularJS/angular-animate.js"></script>
+    <script type="text/javascript" src="js/AngularJS/ui-bootstrap-tpls-2.1.3.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+    <!-- CONTROLADORES -->
+
+    <script type="text/javascript" src="js/Controller/headerController.js"></script>
+    <script type="text/javascript" src="js/Controller/actividadesController.js"></script>
+    <script type="text/javascript" src="js/Controller/addActividadController.js"></script>
+    <script type="text/javascript" src="js/Controller/homeController.js"></script>
+    <script type="text/javascript" src="js/Controller/investigacionController.js"></script>
+    <script type="text/javascript" src="js/Controller/loginController.js"></script>
+    <script type="text/javascript" src="js/Controller/registrarActividadController.js"></script>
+    <script type="text/javascript" src="js/Controller/estadoActividadesController.js"></script>
+
+    <script type="text/javascript" src="js/Controller/reportabilidadController.js"></script>
+    <script type="text/javascript" src="js/Controller/actividadesRevisadasController.js"></script>
+    <script type="text/javascript" src="js/Controller/actividadesPendientesController.js"></script>
+    <script type="text/javascript" src="js/Controller/relacionDocentesController.js"></script>
+    <script type="text/javascript" src="js/Controller/configuracionController.js"></script>
+    <script type="text/javascript" src="js/Controller/generarDocenteController.js"></script>
+    <script type="text/javascript" src="js/Controller/estadoActividadesController.js"></script>
+    <script type="text/javascript" src="js/Controller/uploadFileController.js"></script>
+
+    <!-- SERVICIOS -->
+    
+    <script type="text/javascript" src="js/Services/HomeService.js"></script>
+    <script type="text/javascript" src="js/Services/LoginService.js"></script>  
+
+    <!-- DIRECTIVAS -->
+    <script type="text/javascript" src="js/Directivas/uploadFileDirective.js"></script>
+
+    <script type="text/javascript" src="js/Services/SharedService.js"></script>
+
+    <!-- pdfMaker -->
+    <script type="text/javascript" src="js/pdfMake/pdfmake.js"></script>
+    <script type="text/javascript" src="js/pdfMake/vfs_fonts.js"></script>
+    <script type="text/javascript" src="js/uploadFile/angular-file-upload.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.tree').treegrid();
+            $('.tree-2').treegrid({
+                expanderExpandedClass: 'glyphicon glyphicon-minus',
+                expanderCollapsedClass: 'glyphicon glyphicon-plus'
+            });
+        });
+    </script>
+    
+    <style>
+        .my-drop-zone { border: dotted 3px lightgray; }
+        .nv-file-over { border: dotted 3px red; } /* Default class applied to drop zones on over */
+        .another-file-over-class { border: dotted 3px green; }
+
+        html, body { height: 100%; }
+    </style>
+
+</head>
+
+<body>
+
+    <div ng-include="'views/header.html'"></div>
+    <!-- Add your site or application content here -->
+    <div ng-view></div>
+
+</body>
+    
+    
+</html>

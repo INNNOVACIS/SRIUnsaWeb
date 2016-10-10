@@ -1,0 +1,234 @@
+<div class="container">
+    <div class="row">
+    	<div class="panel panel-danger" >
+        	<div class="panel-body">
+        		<ul class="nav nav-tabs" style="margin-bottom:6px;">
+        			<li ng-class="{'active' : activeTab == 1}"><a href="#registrar-investigacion.html" ng-click="setActiveTab(1)">Registrar Investigación</a></li>
+        			<li ng-class="{'active' : activeTab == 2}"><a href="#registrar-investigacion.html" ng-click="setActiveTab(2)">Agregar Actividad</a></li>
+        			<li ng-class="{'active' : activeTab == 3}"><a href="#registrar-investigacion.html" ng-click="setActiveTab(3)">Lista de Investigaciones</a></li>
+        		</ul>
+        		<div class="tab-content">
+        			<div ng-class="{'tab-pane active': activeTab === 1, 'tab-pane' : activeTab !== 1}">
+        				<div class="col-xm-12">
+				<div class="panel panel-info">
+					<div class="panel-heading">Datos de la Investigación</div>
+					<div class="panel-body">
+						
+							<form class="form-horizontal">
+								<div class="form-group">
+									<label class="control-label col-md-1" style="">Nombre</label>
+									<div class="col-md-11">
+										<input type="text" style="margin:2px;" id="inpNombre" class="form-control" placeholder="Nombre de la investigación">
+									</div>
+									<label for="inpFacultad" class="control-label col-md-1">Facultad</label>
+									<div class="col-md-5">
+										<select class="form-control" style="margin:2px;" id="inpFacultad">
+										    <option>Facultad de Producción y Servicios</option>
+										    <option>Facultad de Procesos</option>
+										</select>
+									</div>
+									<label for="inpEscuela" class="control-label col-md-1">Escuela</label>
+									<div class="col-md-5">
+										<select class="form-control" style="margin:2px;" id="inpEscuela">
+										    <option>Escuela Profesional de Ingeniería de Sistemas</option>
+										    <option>Industrias Alimentarias</option>
+										    <option>Ingeniería Mecánica</option>
+										</select>
+									</div>
+									<label for="inpSemestre" class="control-label col-md-1"> Semestre</label>
+									<div class="col-md-5">
+										<select class="form-control" style="margin:2px;" id="inpSemestre">
+										    <option>Semestre I</option>
+										    <option>Semestre II</option>
+										    <option>Semestre III</option>
+										</select>
+									</div>
+									<label for="inpFondo" class="control-label col-md-1"> Fondo</label>
+									<div class="col-md-5">
+										<select class="form-control" style="margin:2px;" id="inpFondo">
+										    <option>CONCYTEC</option>
+										    <option>FINCyT</option>
+										</select>
+									</div>
+									<label class="control-label col-md-1"> Labor</label>
+									<div class="col-md-5">
+										<select class="form-control" style="margin:2px;" id="inpLabor">
+										    <option>Lectiva</option>
+										    <option>No Lectiva</option>
+										</select>
+									</div>
+									<label for="inpTipo" class="control-label col-md-1"> Tipo</label>
+									<div class="col-md-5">
+										<select class="form-control" style="margin:2px;" id="inpTipo">
+										    <option>Investigación 1</option>
+										    <option>Investigación 2</option>
+										</select>
+									</div>
+									<label class="control-label col-md-1"> Horas</label>
+									<div class="col-md-5">
+										<input type="number" style="margin:2px;" id="inpHoras" class="form-control" placeholder="Número de horas que durara la investigación">
+									</div>
+									<label class="control-label col-md-1"> Alumnos</label>
+									<div class="col-md-5">
+										<input type="text" style="margin:2px;" id="inpAlumnos" class="form-control" placeholder="Seleccione los alumnos">
+
+									</div>
+									<label class="control-label col-md-1"> Descripción</label>
+									<div class="col-md-11">
+										<textarea style="margin:2px;" class="form-control" rows="5" placeholder="descripcion del proyecto"></textarea> 
+									</div>
+									<label for="inpFile" class="control-label col-md-1"> Archivos</label>
+									<div class="col-md-11">
+										<!-- <input id="inpFile" style="margin:2px;" class="form-control	 file" type="file" multiple> --> 
+										<input id="file-1" type="file" multiple class="file" data-overwrite-initial="false" data-min-file-count="1">
+									</div>
+									<div class="col-md-12" style="margin-top:10px;">
+								        <button type="submit" class="btn btn-success pull-right">Regitrar</button>
+								    </div>
+								</div>
+							</form>
+						
+					</div>
+				</div>	
+			</div>
+			<div class="col-xm-12">
+				<div class="panel panel-danger">
+					<div class="panel-heading">Investigaciones Registradas</div>
+					<div class="panel-body">
+						<div class="table-responsive">
+							<table class="table">
+								<thead>
+							      <tr>
+							        <th>#</th>
+							        <th>Nombre del Proyecto</th>
+							        <th>Tipo de Investigación</th>
+							        <th>Fondo</th>
+							        <th>Duración</th>
+							        <th>Archivos subidos</th>
+							        <th>Acción</th>
+							      </tr>
+							    </thead>
+							    <tbody>
+							      <tr>
+							        <td>1</td>
+							        <td>Tratamiento sostenible y a bajo costo de agua con arsénico ...</td>
+							        <td>Descriptiva</td>
+							        <td>Concytec</td>
+							        <td>100 horas</td>
+							        <td>3</td>
+							        <td><button data-toggle="modal" data-target="#myModal" type="submit" class="btn-sm btn-info ">Iniciar</button></td>
+							      </tr>
+							      <tr>
+							        <td>2</td>
+							        <td>Reanimador de Uso Fácil </td>
+							        <td>exploratoria</td>
+							        <td>FINCyT</td>
+							        <td>80 horas</td>
+							        <td>1</td>
+							        <td><button type="submit" class="btn-sm btn-default ">Iniciado</button></td>
+							      </tr>
+							    </tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+        			</div>
+        			<div ng-class="{'tab-pane active': activeTab === 2, 'tab-pane' : activeTab !== 2}">
+        				<div class="panel panel-info">
+
+					            <div class="panel-heading">INVESTIGACIÓN : <strong>{{selected}}</strong></div>
+					            <div class="panel-body">
+					                <form class="form-horizontal">
+					                <div class="form-group">
+										<label for="inpFacultad" class="control-label col-md-1">Investigación</label>
+					                    <div class="col-md-11">
+					                    	<select class="form-control" style="margin:2px;" ng-model="selected" ng-options="opt as opt for opt in listaProyectos" ng-init="selected=''"></select>			                    
+					                    </div>
+					                    <label for="inpFacultad" class="control-label col-md-1">Nombre</label>
+					                    <div class="col-md-5">
+					                      <input class="form-control" style="margin:2px;" type="text" >
+					                    </div>
+					                    <label for="inpEscuela" class="control-label col-md-1">Duración</label>
+					                    <div class="col-md-5">
+					                      <input class="form-control" style="margin:2px;" type="number" >
+					                    </div>
+					                    <!-- <label for="inpEscuela" class="control-label col-md-1">Fecha</label>
+					                    <div class="col-md-5">
+					                        <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+					                        <span class="input-group-btn">
+					                          <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+					                        </span>
+					                    </div> -->
+					                    <div class="col-md-12" style="margin-top:10px;">
+					                      <a type="submit" class="col-md-offset-1 btn btn-primary" >
+					                        <span class="glyphicon glyphicon-plus" aria-hidden="true">Agregar</span>
+					                      </a>
+					                    </div>
+					                  </div>
+					                </form>
+					            </div>
+				            </div>
+				            <div class="panel panel-danger">
+				              <div class="panel-heading">Resultados</div>
+				              <div class="panel-body">
+				                <div class="table-responsive">
+				                  <table class="table">
+				                    <thead>
+				                        <tr>
+				                          <th>#</th>
+				                          <th>Nombre de la Actividad</th>
+				                          <th>Duración</th>
+				                          <th>Fecha Inicio</th>
+				                          <th>Fecha Finn</th>
+				                        </tr>
+				                      </thead>
+				                      <tbody>
+				                        <tr>
+				                          <td>1</td>
+				                          <td>Actividad 1</td>
+				                          <td>30 horas</td>
+				                          <td></td>
+				                          <td></td>
+				                        </tr>
+				                        <tr>
+				                          <td>2</td>
+				                          <td>Actividad 2 </td>
+				                          <td>20 horas</td>
+				                          <td></td>
+				                          <td></td>
+				                        </tr>
+				                        <tr>
+				                          <td>3</td>
+				                          <td>Actividad 3 </td>
+				                          <td>20 horas</td>
+				                          <td></td>
+				                          <td></td>
+				                        </tr>
+				                      </tbody>
+				                  </table>
+				                </div>
+				              </div>
+				            </div>
+        			</div>
+        			<div ng-class="{'tab-pane active': activeTab === 3, 'tab-pane' : activeTab !== 3}">
+        				panel 3
+        			</div>
+        		</div>
+        	</div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+		$("#file-1").fileinput({
+	        uploadUrl: '#', // you must set a valid URL here else you will get an error
+	        allowedFileExtensions : ['jpg', 'png','gif', 'py','pdf','.docx', 'doc' ],
+	        overwriteInitial: false,
+	        maxFileSize: 1000,
+	        maxFilesNum: 10,
+	        //allowedFileTypes: ['image', 'video', 'flash'],
+	        slugCallback: function(filename) {
+	            return filename.replace('(', '_').replace(']', '_');
+	        }
+		});
+	</script>
